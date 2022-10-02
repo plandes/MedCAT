@@ -5,9 +5,12 @@ with open("./README.md", "r") as fh:
 
 
 setuptools.setup(
-    name="medcat",
+    # needs new name for pypi--PL 10/02/2022
+    name="zensols.medcat",
     setup_requires=["setuptools_scm"],
-    use_scm_version={"local_scheme": "no-local-version", "fallback_version": "unknown"},
+    #use_scm_version={"local_scheme": "no-local-version", "fallback_version": "unknown"},
+    # hard code version for this hack--PL 10/02/2022
+    version='1.3.0',
     author="w-is-h",
     author_email="w.kraljevic@gmail.com",
     description="Concept annotation tool for Electronic Health Records",
@@ -20,7 +23,8 @@ setuptools.setup(
         'numpy>=1.21.4',
         'pandas<=1.4.2,>=1.1.5',
         'gensim~=4.1.2',
-        'spacy<3.1.4,>=3.1.0',
+        # remove spacy pinned version to allow pinning in packages that include this one--PL 10/02/2022
+        #'spacy<3.1.4,>=3.1.0',
         'scipy<=1.8.1,>=1.5.4',
         'transformers~=4.19.2',
         'torch>=1.0',
